@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#ffffff;font-family:Segoe UI,Arial,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+
+<table width="620" cellpadding="0" cellspacing="0"
+style="background:#ffffff;border-radius:12px;border:1.5px solid #d1d5db;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+
+<!-- HEADER -->
+<tr>
+<td style="background:#2E2278;padding:16px 20px;">
+<table width="100%">
+<tr>
+<td>
+<a href="https://sites.google.com/view/driemsit/home">
+<img src="https://lh3.googleusercontent.com/d/1zMARUFlcRIdEzLKG60unqZRvVmhnODYD=w200"
+style="height:42px;">
+</a>
+</td>
+
+<td align="right" style="color:#fff;">
+<div style="font-size:14px;font-weight:600;">IT Support</div>
+<div style="font-size:11px;opacity:0.8;">Ticket Reassigned</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!-- YELLOW STRIP -->
+<tr>
+<td style="height:4px;background:#E1A835;"></td>
+</tr>
+
+<!-- BODY -->
+<tr>
+<td style="padding:20px;">
+
+<p>Dear <b><?= newTechName ?></b>,</p>
+
+<p style="color:#444;">
+A ticket has been <b style="color:#f59e0b;">reassigned to you</b> by IT Head.
+Please review and take necessary action.
+</p>
+
+<!-- TICKET -->
+<div style="background:#f8fafc;padding:12px;border-radius:8px;border-left:4px solid #f59e0b;">
+<b>Ticket ID:</b> <?= ticketNo ?><br>
+</div>
+
+<br>
+
+<!-- DETAILS -->
+<table width="100%" style="font-size:14px;line-height:1.6;">
+
+<tr>
+<td width="50%">
+<b>Reported By</b><br>
+<?= staffName ?><br>
+<?= staffMob ?>
+</td>
+
+<td>
+<b>Location</b><br>
+<?= building ?> BUILDING<br>
+<?= floor ?> FLOOR<br>
+<?= room ?>
+</td>
+</tr>
+
+<tr><td colspan="2" height="10"></td></tr>
+
+<tr>
+<td>
+<b>Asset</b><br>
+<?= assetType ?><br>
+<?= assetNo || "N/A" ?>
+</td>
+
+<td>
+<b>Previous Technician</b><br>
+<?= oldTech ?><br>
+<?= oldMob ?>
+</td>
+</tr>
+
+</table>
+
+<br>
+
+<!-- ISSUE -->
+<div style="background:#f9fafb;padding:10px;border-radius:8px;">
+<b>Issue Details</b><br>
+<?= issue ?>
+</div>
+
+<br>
+
+<!-- REMARK -->
+<div style="background:#fff3cd;padding:10px;border-radius:8px;border-left:4px solid #E1A835;">
+<b>IT Head Instructions</b><br>
+<?= remark || "N/A" ?>
+</div>
+
+<br>
+
+<!-- ACTION -->
+<div style="text-align:center;">
+<a href="<?= techPrefillLink ?>"
+style="display:inline-block;background:#2E2278;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;">
+Update Ticket Status
+</a>
+</div>
+
+</td>
+</tr>
+
+<!-- FOOTER -->
+<tr>
+<td style="text-align:center;padding:12px;font-size:11px;color:#777;border-top:1px solid #eee;">
+IT Support Team<br>
+DRIEMS University
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
