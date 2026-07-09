@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#ffffff;font-family:Segoe UI,Arial,sans-serif;">
+
+<!-- FULL WIDTH WRAPPER -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+<tr>
+<td align="center">
+
+<!-- MAIN CARD -->
+<table width="620" cellpadding="0" cellspacing="0"
+style="
+background:#ffffff;
+border-radius:12px;
+overflow:hidden;
+border:1.5px solid #d1d5db;
+box-shadow:0 2px 6px rgba(0,0,0,0.06);
+">
+
+<!-- HEADER -->
+<tr>
+<td style="background:#2E2278;padding:16px 20px;">
+<table width="100%">
+<tr>
+<td>
+<a href="https://sites.google.com/view/driemsit" target="_blank">
+<img src="https://drive.google.com/uc?export=view&id=1zMARUFlcRIdEzLKG60unqZRvVmhnODYD"
+style="height:42px;display:block;">
+</a>
+</td>
+
+<td align="right" style="color:#fff;">
+<div style="font-size:14px;font-weight:600;">IT Support</div>
+<div style="font-size:11px;opacity:0.8;">Acknowledgement Receipt</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!-- YELLOW STRIP -->
+<tr>
+<td style="height:4px;background:#E1A835;"></td>
+</tr>
+
+<!-- BODY -->
+<tr>
+<td style="padding:20px;">
+
+<p style="margin:0 0 10px 0;">Dear <b><?= staffName ?></b>,</p>
+
+<p style="font-size:14px;color:#444;margin-bottom:15px;">
+Your IT support request has been successfully registered.
+</p>
+
+<!-- TICKET + PRIORITY -->
+<table width="100%" style="margin-bottom:15px;">
+<tr>
+
+<td>
+<div style="background:#f8fafc;padding:12px;border-radius:8px;
+border-left:4px solid #E1A835;font-size:14px;">
+<b>Ticket ID:</b> <?= ticketNo ?>
+</div>
+</td>
+
+<td align="right">
+<span style="
+padding:6px 10px;
+border-radius:20px;
+font-size:11px;
+font-weight:600;
+color:#fff;
+background:
+<?=
+  priority && priority.toUpperCase() === 'IMMEDIATE' ? '#ef4444' :
+  priority && priority.toUpperCase() === 'LOW' ? '#3b82f6' :
+  '#22c55e'
+?>;
+">
+<?= priority || "NORMAL" ?>
+</span>
+</td>
+
+</tr>
+</table>
+
+<!-- DETAILS GRID -->
+<table width="100%" style="font-size:14px;color:#333;line-height:1.6;">
+
+<tr>
+<td width="50%" valign="top">
+<b>Reported By</b><br>
+<?= staffName ?><br>
+<?= mobile ?>
+</td>
+
+<td valign="top">
+<b>Location</b><br>
+<?= building ?> BUILDING<br>
+<?= floor ?> FLOOR<br>
+<?= room ?>
+</td>
+</tr>
+
+<tr><td colspan="2" height="10"></td></tr>
+
+<tr>
+<td valign="top">
+<b>Asset</b><br>
+<?= assetType ?><br>
+<?= assetNo || "N/A" ?>
+</td>
+
+<td valign="top">
+<b>Issue</b><br>
+<?= problem ?>
+</td>
+</tr>
+
+</table>
+
+<br>
+
+<!-- TECHNICIAN -->
+<div style="background:#f9fafb;padding:12px;border-radius:8px;border-left:4px solid #2E2278;">
+<b>Assigned Technician</b><br>
+<?= techName ?> (<?= techMobile ?>)
+</div>
+
+<br>
+
+<!-- ACTION ROW -->
+<table width="100%" style="text-align:center;">
+<tr>
+
+<td>
+<a href="<?= preFilledLink ?>"
+style="display:inline-block;background:#2E2278;color:#fff;
+padding:10px 16px;border-radius:6px;text-decoration:none;font-size:13px;">
+Technician Update
+</a>
+</td>
+
+<td>
+<a href="<?= trackingLink ?>" target="_blank"
+style="display:inline-block;background:#E1A835;color:#fff;
+padding:10px 16px;border-radius:6px;text-decoration:none;font-size:13px;">
+Track Ticket
+</a>
+</td>
+
+<td align="center">
+<a href="<?= computerLink ?>" target="_blank">
+  <img src="https://quickchart.io/qr?size=100&text=<?= computerLink ?>"
+       style="border:1px solid #ddd;
+              border-radius:6px;
+              padding:4px;
+              background:#fff;
+              cursor:pointer;">
+</a>
+<div style="font-size:10px;color:#666;margin-top:4px;">
+Computer Details 
+</div>
+</td>
+
+</tr>
+</table>
+
+<br>
+
+<!-- ESCALATION -->
+<div style="font-size:13px;color:#444;">
+If <b><?= techName ?></b> does not contact you within <b>15 minutes</b>, please feel free to escalate the matter to:
+<br><br>
+<b>IT Head</b><br>
+<?= itHeadName ?> – <?= itHeadMobile ?>
+</div>
+
+</td>
+</tr>
+
+<!-- FOOTER -->
+<tr>
+<td style="background:#ffffff;text-align:center;padding:12px;font-size:11px;color:#777;border-top:1px solid #eee;">
+IT Support Team<br>
+DRIEMS University
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
